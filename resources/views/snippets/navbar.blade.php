@@ -9,22 +9,17 @@
 
         <!-- Output sign in/sign out buttons appropriately -->
         <div class="navbar-header">
-			<img src="/img/custom_logo.png" class="navbar-brand d-inline-block align-top" alt="Logo" style="display: none;padding: 10px 0px 10px 15px;" onload="this.style.display=''">
             <a class="navbar-brand" href="{{ route('index') }}">{{env('APP_NAME')}}</a>
         </div>
 
         <ul id="navbar" class="nav navbar-collapse collapse navbar-nav" id="nbc">
-		    <li><a href="{{ route('about') }}">About</a></li>
+	<a class="navbar-brand" href="{{ route('about') }}">About</a>
 
             @if (empty(session('username')))
-                <li class="visible-xs"><a href="{{ route('login') }}">Sign In</a></li>
                 @if (env('POLR_ALLOW_ACCT_CREATION'))
                     <li class="visible-xs"><a href="{{ route('signup') }}">Sign Up</a></li>
                 @endif
             @else
-                <li class="visible-xs"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="visible-xs"><a href="{{ route('admin') }}#settings">Settings</a></li>
-                <li class="visible-xs"><a href="{{ route('logout') }}">Logout</a></li>
             @endif
         </ul>
 
@@ -37,7 +32,7 @@
                 @endif
 
                 <li class="dropdown">
-                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong></a>
                     <div class="dropdown-menu pull-right login-dropdown-menu" id="dropdown">
                         <h2>Login</h2>
                         @if (in_array('SAML', explode(',', env('POLR_LOGIN_MODES'))) == true)                                        
@@ -54,7 +49,7 @@
             @else
                 <div class='nav pull-right navbar-nav'>
                     <li class='dropdown'>
-                    <a class="dropdown-toggle login-name" href="#" data-toggle="dropdown">{{session('username')}} <strong class="caret"></strong></a>
+                    <a class="navbar-brand" href="#" data-toggle="dropdown">{{session('username')}} <strong class="caret"></strong></a>
                         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu">
                             <li><a tabindex="-1" href="{{ route('admin') }}">Dashboard</a></li>
                             <li><a tabindex="-1" href="{{ route('admin') }}#settings">Settings</a></li>

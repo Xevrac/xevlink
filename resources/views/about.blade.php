@@ -8,23 +8,23 @@
 @section('content')
 <div class='well logo-well'>
     <img class='logo-img' src='/img/logo.png' />
-</div>
+<br><br>
 
 <div class='about-contents'>
-    @if ($role == "admin")
-    <dl>
+        <dl>
         <p>Build Information</p>
         <dt>Version: {{env('POLR_VERSION')}}</dt>
         <dt>Release date: {{env('POLR_RELDATE')}}</dt>
-        <dt>App Install: {{env('APP_NAME')}} on {{env('APP_ADDRESS')}} on {{env('POLR_GENERATED_AT')}}<dt>
-    </dl>
-    <p>You are seeing the information above because you are logged in as an administrator. You can edit the contents of this page by editing <code>resources/views/about.blade.php</code></p>
-    @endif
+        <dt>Instance: {{env('APP_NAME')}} installed on {{env('POLR_GENERATED_AT')}}<dt>
+    </dl>    
 
-    <p>{{env('APP_NAME')}} is powered by Polr 2, an open source, minimalist link shortening platform. The Polr Project is in no way associated with this site.
-        Learn more at <a href='https://github.com/Cydrobolt/polr'>its Github page</a> or its <a href="//project.polr.me">project site</a>.
-        <br />Polr is licensed under the GNU GPL License.
-    </p>
+    <p>{{env('APP_NAME')}} is powered by Polr 2, an open source, minimalist link shortening platform. Polr is not associated with Xevlink; in addition Xevlink is a modified, technically updated version of Polr 2 that is fully upgraded with modern compatibility for the latest benefits of Laravel, PHP , and dependencies.</p>
+<p>Discover more of my projects from <a href="https://docs.xevrac.com">Docs</a>.</p><br>
+    <dt>Credit: <a href="https://github.com/cydrobolt/polr">Polr</a> Github page. Polr is licensed under the GNU GPL License.</dt>
+
+</div>
+
 </div>
 
 @endsection
+

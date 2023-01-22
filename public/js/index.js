@@ -54,10 +54,10 @@ $(function() {
     function changeTips(tcase) {
         switch (tcase) {
             case 1:
-                setTip('Create an account to keep track of your links');
+                setTip('Click "Options" to customize your link.');
                 break;
             case 2:
-                setTip('Did you know you can change the URL ending by clicking on "Link Options"?');
+                setTip('Join our Discord at https://xevnet.au');
                 i = 1;
                 break;
         }

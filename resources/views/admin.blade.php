@@ -25,8 +25,10 @@
     <div class='col-md-10'>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
-                <h2>Welcome to your {{env('APP_NAME')}} dashboard!</h2>
+                <h1>Welcome {{session('username')}}, to your dashboard!</h2>
                 <p>Use the links on the left hand side to navigate your {{env('APP_NAME')}} dashboard.</p>
+
+<p>This page is a work in progress.</p>
             </div>
 
             <div role="tabpanel" class="tab-pane" id="links">

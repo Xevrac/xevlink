@@ -9,7 +9,7 @@
 
 <form method='POST' action='/shorten' role='form'>
     <input type='url' autocomplete='off'
-        class='form-control long-link-input' placeholder='http://' name='link-url' />
+        class='form-control long-link-input' placeholder='https://' name='link-url' />
 
     <div class='row' id='options' ng-cloak>
         <p>Customize link</p>
@@ -28,17 +28,18 @@
 
         <div>
             <div class='custom-link-text'>
-                <h2 class='site-url-field'>{{env('APP_ADDRESS')}}/</h2>
+                <h3 style="color:#007cff;display:inline;">{{env('APP_ADDRESS')}}/</h2>
                 <input type='text' autocomplete="off" class='form-control custom-url-field' name='custom-ending' />
             </div>
             <div>
+<br>
                 <a href='#' class='btn btn-success btn-xs check-btn' id='check-link-availability'>Check Availability</a>
                 <div id='link-availability-status'></div>
             </div>
         </div>
     </div>
     <input type='submit' class='btn btn-info' id='shorten' value='Shorten' />
-    <a href='#' class='btn btn-warning' id='show-link-options'>Link Options</a>
+    <a href='#' class='btn btn-warning' id='show-link-options'>Options</a>
     <input type="hidden" name='_token' value='{{csrf_token()}}' />
 </form>
 
