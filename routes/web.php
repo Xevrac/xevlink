@@ -44,7 +44,7 @@ if (in_array('SAML', explode(',', env('POLR_LOGIN_MODES')))) {
 Route::get('/', [IndexController::class, 'showIndexPage'])->name('index');
 Route::get('/logout', [UserController::class, 'performLogoutUser'])->name('logout');
 Route::get('/login', [UserController::class, 'displayLoginPage'])->name('login');
-Route::get('/about-polr', [StaticPageController::class, 'displayAbout'])->name('about');
+Route::get('/about', [StaticPageController::class, 'displayAbout'])->name('about');
 
 Route::get('/lost_password', [UserController::class, 'displayLostPasswordPage'])->name('lost_password');
 Route::get('/activate/{username}/{recovery_key}', [UserController::class, 'performActivation'])->name('activate');
